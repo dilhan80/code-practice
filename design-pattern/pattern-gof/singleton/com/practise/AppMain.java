@@ -6,12 +6,15 @@ public class AppMain {
 
     public static void main(String arg[]) throws IOException, ClassNotFoundException {
         System.out.println("Hellow");
+
+        /** handle clone issue **/
         try {
             DateUtil.getInstance().clone();
         } catch (CloneNotSupportedException e) {
             System.out.println("exception : " + e.getMessage());
         }
 
+        /** handle serialization issue in singleton **/
         DateUtil dateUtil = DateUtil.getInstance();
         ObjectOutputStream  oos = new ObjectOutputStream(new FileOutputStream(new File("C:\\Users\\Other\\Documents\\design-patterns\\dateUtil.ser")));
         oos.writeObject(dateUtil);
