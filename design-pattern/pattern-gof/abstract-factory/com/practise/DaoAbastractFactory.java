@@ -1,2 +1,5 @@
-package com.practise;public class DaoAbastractFactory {
+package com.practise;
+
+public abstract class DaoAbastractFactory {
+    public abstract Dao createDao(String type);
 }
